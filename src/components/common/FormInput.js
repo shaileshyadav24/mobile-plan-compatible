@@ -9,7 +9,7 @@ export default function FormInput({ searchType, placeholder, searchInput, setSea
     return (
         <Fragment>
             <LabelWithInfomation information={information} searchType={searchType}/>
-            <input className="w-full p-2 border rounded" type={searchType} placeholder={placeholder} value={searchInput} onChange={handleValueChange} />
+            <input className="search-input p-2 border rounded" type={searchType} placeholder={placeholder} value={searchInput} onChange={handleValueChange} />
         </Fragment>
     )
 }

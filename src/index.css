@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/tailwind.css";
 
 body {
   margin: 0;
@@ -14,4 +12,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.search-input  {
+  width: 350px;
+  display: block;
 }
