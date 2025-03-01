@@ -5,22 +5,29 @@ import { useDispatch } from "react-redux";
 export default function MobileSearch() {
     let dispatch = useDispatch();
     let [searchValue, setSearchValue] = useState('');
+    let [error, setError] = useState('');
 
     function searchPlanByMobile() {
-        dispatch({
-            type: 'SET_SEARCH_TYPE',
-            searchType: 'mobile'
-        });
+        setError('');
+        if (searchValue.trim().length === 0) {
+            setError('Please enter your mobile name to search');
+        } else {
+            dispatch({
+                type: 'SET_SEARCH_TYPE',
+                searchType: 'mobile'
+            });
 
-        dispatch({
-            type: 'SET_SEARCH_VALUE',
-            searchValue: searchValue
-        });
+            dispatch({
+                type: 'SET_SEARCH_VALUE',
+                searchValue: searchValue
+            });
+        }
     }
 
     return (
-        <div className="mobile-search">
+        <div className="w-full">
             <FormInput searchType="text" placeholder="e.g., iPhone 14, Samsung Galaxy S23" searchInput={searchValue} setSearchInput={setSearchValue} />
+            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
             <button className="w-full bg-blue-500 mt-2 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-400" onClick={searchPlanByMobile}>Search</button>
         </div>
     )
