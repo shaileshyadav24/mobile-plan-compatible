@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import LabelWithInfomation from "./LabelWithInfomation";
 
 export default function FormInput({ searchType, placeholder, searchInput, setSearchInput, information }) {
