@@ -1,34 +1,34 @@
 import FormInput from "./common/FormInput"
 import { useState } from "react"
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
-export default function MobileSearch() {
+export default function MobileSearch({submitData}) {
     let dispatch = useDispatch();
-    let [searchValue, setSearchValue] = useState('');
+    let state = useSelector(state => state);
     let [error, setError] = useState('');
+
+     useEffect(() => {
+            dispatch({
+                type: 'SET_SEARCH_TYPE',
+                searchType: 'MOBILE'
+            });
+    }, []);
 
     function searchPlanByMobile() {
         setError('');
-        if (searchValue.trim().length === 0) {
+        if (state.searchValue.trim().length === 0) {
             setError('Please enter your mobile name to search');
         } else {
-            dispatch({
-                type: 'SET_SEARCH_TYPE',
-                searchType: 'mobile'
-            });
-
-            dispatch({
-                type: 'SET_SEARCH_VALUE',
-                searchValue: searchValue
-            });
+            submitData();
         }
     }
 
     return (
         <div className="w-full">
-            <FormInput searchType="text" placeholder="e.g., iPhone 14, Samsung Galaxy S23" 
-                information="To find your phone's model name, go to your phone's Settings menu, then navigate to About phone where you should see the model name listed under 'Model' or a similar label"
-                searchInput={searchValue} setSearchInput={setSearchValue} />
+            <FormInput searchType="text" 
+                placeholder="e.g., iPhone 14, Samsung Galaxy S23" 
+                information="To find your phone's model name, go to your phone's Settings menu, then navigate to About phone where you should see the model name listed under 'Model' or a similar label"/>
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
             <button className="w-full bg-blue-500 mt-2 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-400" onClick={searchPlanByMobile}>Search</button>
         </div>

@@ -9,7 +9,7 @@ export default function Tab({tabsName, tab, setTabType}) {
                     <button
                         key={index}
                         type="button"
-                        className={`flex-4 p-2 rounded ${tab === data.value ? 'bg-blue-500 text-white' : 'bg-gray-200'
+                        className={`flex-4 p-2 pr-4 rounded ${tab === data.value ? 'bg-blue-500 text-white' : 'bg-gray-200'
                             }`}
                         onClick={() => setTabType(data.value)}
                     >

@@ -1,9 +1,18 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import LabelWithInfomation from "./LabelWithInfomation";
+import { useDispatch } from "react-redux";
 
-export default function FormInput({ searchType, placeholder, searchInput, setSearchInput, information }) {
+export default function FormInput({ searchType, placeholder, information }) {
+    let [searchInput, setSearchInput] = useState('');
+    let dispatch = useDispatch();
+
     function handleValueChange(event) {
         setSearchInput(event.target.value);
+        dispatch({
+            type: 'SET_SEARCH_VALUE',
+            searchValue: event.target.value
+        });
+
     }
 
     return (
