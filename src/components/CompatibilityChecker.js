@@ -10,9 +10,13 @@ import fetchCompatiblePlans from "../services/api";
 
 export default function CompatibilityChecker() {
     let [tab, setTab] = useState('MOBILE');
+    let [isError, setIsError] = useState('');
+
     let queryClient = useQueryClient();
     let mutation = useMutation(fetchCompatiblePlans)
-    let state = useSelector(state => state);
+    
+    let searchType = useSelector(state => state.searchType);
+    let searchValue = useSelector(state => state.searchValue);
 
     function setTabType(tabType) {
         setTab(tabType);
@@ -20,10 +24,10 @@ export default function CompatibilityChecker() {
 
     async function submitData() {
         let body = JSON.stringify({
-            searchType: state.searchType,
-            searchValue: state.searchValue
+            searchType,
+            searchValue
         });
-
+        setIsError(false);
         try {
             let response = await mutation.mutateAsync(body);
             await queryClient.invalidateQueries('phonePlans');
@@ -33,7 +37,7 @@ export default function CompatibilityChecker() {
                 await queryClient.setQueryData('phonePlans', []);
             }
         } catch (error) {
-            console.error(error);
+            setIsError(true);
         }
     };
 
@@ -44,13 +48,13 @@ export default function CompatibilityChecker() {
                 <Tab tabsName={tabsName} tab={tab} setTabType={setTabType} />
             </div>
             <div className="space-y-4 mt-4">
-                {tab === 'MOBILE' ? <MobileSearch submitData={submitData} /> : <IMEISearch submitData={submitData} />}
+                {tab === 'MOBILE' ? <MobileSearch isLoading={mutation.isLoading} submitData={submitData} /> : <IMEISearch isLoading={mutation.isLoading} submitData={submitData} />}
             </div>
 
             {mutation.isLoading && <p className="mt-4">Loading...</p>}
-            {mutation.isError && <p className="mt-4">Something went wrong...</p>}
+            {isError && <p className="mt-4">Something went wrong...Please try again.</p>}
             {mutation.isSuccess && <PhonePlans />}
-            
+
         </div>
     )
 }

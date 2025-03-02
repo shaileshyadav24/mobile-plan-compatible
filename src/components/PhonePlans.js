@@ -4,6 +4,7 @@ export default function PhonePlans() {
 
     const { data: phonePlans } = useQuery({
         queryKey: ['phonePlans'], 
+        queryFn: () => {return phonePlans;}
     });        
 
     return (
@@ -12,7 +13,7 @@ export default function PhonePlans() {
                 phonePlans && phonePlans.length > 0 && phonePlans.map(plan => {
                     return (
                         <div key={plan.id} className="bg-white shadow-md p-4 w-96">
-                            <h3 className="text-xl font-semibold">{plan.name}</h3>
+                            <h3 className="text-xl font-semibold">{plan.planName}</h3>
                         </div>
                     )
                 })

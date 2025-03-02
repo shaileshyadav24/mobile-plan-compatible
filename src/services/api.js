@@ -5,7 +5,5 @@ export default function fetchCompatiblePlans(body) {
             'Content-Type': 'application/json',
         },
         body,
-    }).then(res => res.json()).catch(error => {
-        throw new Error(error);
-    });
+    }).then(res => res.json()).catch(error => error);
 }

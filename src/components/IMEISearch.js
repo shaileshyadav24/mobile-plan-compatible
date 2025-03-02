@@ -3,9 +3,9 @@ import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-export default function IMEISearch({ submitData }) {
+export default function IMEISearch({ isLoading, submitData }) {
     let dispatch = useDispatch();
-    let state = useSelector(state => state);
+    let searchValue = useSelector(state => state.searchValue);
     let [error, setError] = useState('');
 
     useEffect(() => {
@@ -15,10 +15,10 @@ export default function IMEISearch({ submitData }) {
         });
     }, []);
 
-    function searchPlanByMobile() {
+    function searchPlanByIMEI() {
         const imeiRegex = /^[0-9]{15}$/;
         setError('');
-        if (!imeiRegex.test(state.searchValue)) {
+        if (!imeiRegex.test(searchValue)) {
             setError('Please enter a valid 15-digit IMEI number');
         } else {
             submitData();
@@ -31,9 +31,7 @@ export default function IMEISearch({ submitData }) {
                 placeholder="Enter 15-digit IMEI"  
                 information="You can find your IMEI number by dialing *#06# on your phone's keypad or checking your device's settings." />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-            <button 
-                className="w-full bg-blue-500 text-white p-2 mt-2 rounded hover:bg-blue-600 disabled:bg-gray-400" 
-                onClick={searchPlanByMobile}>Check Compatibility</button>
+            <button disabled={isLoading} className="w-full bg-blue-500 mt-2 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-400" onClick={searchPlanByIMEI}>{isLoading ? 'Checking...' : 'Search Compatability'}</button>
         </div>
     )
 
