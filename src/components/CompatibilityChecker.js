@@ -4,38 +4,37 @@ import MobileSearch from "./MobileSearch";
 import Tab from "./common/Tab";
 import { tabsName } from "../constant/tabsName";
 import { useSelector } from "react-redux";
-import { useMutation } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
+import PhonePlans from "./PhonePlans";
+import fetchCompatiblePlans from "../services/api";
 
 export default function CompatibilityChecker() {
     let [tab, setTab] = useState('MOBILE');
+    let queryClient = useQueryClient();
+    let mutation = useMutation(fetchCompatiblePlans)
     let state = useSelector(state => state);
 
     function setTabType(tabType) {
         setTab(tabType);
     }
 
-    const mutation = useMutation({
-        mutationKey: 'phoneCompatibility',
-        mutationFn: (body) => {
-            fetch("/getPhoneCompatibility", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body,
-            }).then(res => res.json())
-                .catch(err => {
-                    throw new Error(err.message);
-                })
-        },
-    });
-
-    function submitData() {
+    async function submitData() {
         let body = JSON.stringify({
             searchType: state.searchType,
             searchValue: state.searchValue
         });
-        mutation.mutate(body);
+
+        try {
+            let response = await mutation.mutateAsync(body);
+            await queryClient.invalidateQueries('phonePlans');
+            if (response.plans.length > 0) {
+                await queryClient.setQueryData('phonePlans', response.plans);
+            } else {
+                await queryClient.setQueryData('phonePlans', []);
+            }
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     return (
@@ -48,15 +47,10 @@ export default function CompatibilityChecker() {
                 {tab === 'MOBILE' ? <MobileSearch submitData={submitData} /> : <IMEISearch submitData={submitData} />}
             </div>
 
-            {
-                state.result && state.result.length > 0 && (
-                    state.result.map((data, index) => (
-                        <div key={index} className="mt-4">
-                            <h3 className="text-xl font-semibold">{data.name}</h3>
-                            <p className="text-gray-500">{data.id}</p>
-                        </div>
-                    )))
-            }
+            {mutation.isLoading && <p className="mt-4">Loading...</p>}
+            {mutation.isError && <p className="mt-4">Something went wrong...</p>}
+            {mutation.isSuccess && <PhonePlans />}
+            
         </div>
     )
 }
