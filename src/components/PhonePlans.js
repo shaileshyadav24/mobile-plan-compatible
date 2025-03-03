@@ -34,7 +34,7 @@ export default function PhonePlans() {
                                             <span className="mr-2 text-5xl font-extrabold">${plan.price}</span>
                                             <span className="text-gray-500 dark:text-gray-400">/month</span>
                                         </div>
-                                        <ul role="list" className="mb-8 space-y-4 text-left">
+                                        <ul className="mb-8 space-y-4 text-left">
                                             {
                                                 plan.features && plan.features.length > 0 && plan.features.map((feature, index) => {
                                                     return (<li key={index} className="flex items-center space-x-3">

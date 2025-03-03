@@ -3,15 +3,16 @@ import IMEISearch from "./IMEISearch";
 import MobileSearch from "./MobileSearch";
 import Tab from "./common/Tab";
 import { tabsName } from "../constant/tabsName";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useMutation, useQueryClient } from 'react-query';
 import PhonePlans from "./PhonePlans";
 import fetchCompatiblePlans from "../services/api";
+import LoadingPlans from "./common/LoadingPlans";
 
 export default function CompatibilityChecker() {
     let [tab, setTab] = useState('MOBILE');
     let [isError, setIsError] = useState('');
-
+    let dispatch = useDispatch();
     let queryClient = useQueryClient();
     let mutation = useMutation(fetchCompatiblePlans)
 
@@ -20,6 +21,7 @@ export default function CompatibilityChecker() {
 
     function setTabType(tabType) {
         setTab(tabType);
+        dispatch({ type: 'SET_SEARCH_VALUE', searchValue: '' });
     }
 
     async function submitData() {
@@ -51,7 +53,7 @@ export default function CompatibilityChecker() {
                 <div className="space-y-4 mt-4">
                     {tab === 'MOBILE' ? <MobileSearch isLoading={mutation.isLoading} submitData={submitData} /> : <IMEISearch isLoading={mutation.isLoading} submitData={submitData} />}
                 </div>
-
+                {  mutation.isLoading && <LoadingPlans/>}
                 {isError && <h2 className="mt-4">Something went wrong...Please try again.</h2>}
             </div>
             {mutation.isSuccess && <PhonePlans/>}
