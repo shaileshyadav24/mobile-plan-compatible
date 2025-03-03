@@ -91,7 +91,7 @@ export const phonePlansByMobile = [
     },
     {
         "id": 3,
-        "name": "Galaxy S23 Ultra",
+        "name": "Samsung S23 Ultra",
         "plans": [
             {
                 "id": "P5",
@@ -136,7 +136,7 @@ export const phonePlansByMobile = [
     },
     {
         "id": 4,
-        "name": "Galaxy Z Flip5",
+        "name": "Samsung Z Flip5",
         "plans": [
             {
                 "id": "P7",
