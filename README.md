@@ -40,19 +40,19 @@ React, Redux, TailwindCSS, MSW
 
 ## Approach
 
-1. User will select which type of search they want to perform whether "By Mobile Name" or "IMEI number"
-2. Once selected, they can input their respective selection in input. For testing, please refer to `src/mocks/phonePlans` to get list and copy paste value in input
-3. Once entered, user can hit enter and see their result. Delay is added in mocking to view loading transition (Used msw for it. Delay can be updated by updating param in `delay()` method in `src/mocks/handlers.js` file). 
+1. User will select which type of search they want to perform whether "By Mobile Name" or "IMEI number".
+2. Once selected, they can input their respective selection in input. For testing, please refer to `src/mocks/phonePlans` to get list and copy paste value in input.
+3. Once entered, user can hit enter and see their result. Delay is added in mocking to view loading transition.(Used msw for it. Delay can be updated by updating param in `delay()` method in `src/mocks/handlers.js` file)
 4. Once API complete, they can see list of plans available.
 5. If no matching record found, user can see "No result found" text.
 
 ## Technical approach
 
-1. Search Type and Search Value are stored in redux store to fetch in `CompatibilityChecker` component
+1. Search Type and Search Value are stored in redux store to fetch in `CompatibilityChecker` component.
 2. Two separate components are created for input `IMEISearch` and `MobileSearch` to run their validation in their respective file.
 3. useMutation is used to run POST call, which on success, result is cached in `QueryClient`. `QueryClient` caches is refreshed on each API request.
-4. Once result is fetched, cache from `QueryClient` is used to display result in `PhonePlans` component
-5. `LoadingPlan` component is added for loading transition
+4. Once result is fetched, cache from `QueryClient` is used to display result in `PhonePlans` component.
+5. `LoadingPlan` component is added for loading transition.
 
 
 ## Deployment
