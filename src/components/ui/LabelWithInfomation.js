@@ -1,5 +1,4 @@
 import { Fragment, useState } from 'react';
-import { commonContent } from '../../content/common';
 
 export default function LabelWithInfomation({ information, label }) {
     let [showPopup, setShowPopup] = useState(false);
