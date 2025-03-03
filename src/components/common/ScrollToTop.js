@@ -28,7 +28,7 @@ export default function ScrollToTop() {
     return (
         <Fragment>
             {isVisible && (
-                <button className="fixed bottom-10 right-5 h-14 w-14 rounded-full border-4 border-blue-500 hover:bg-blue-600" onClick={() => scrollToTop()}>
+                <button className="fixed bottom-10 right-5 h-14 w-14 rounded-full border-4 border-blue-500 hover:bg-blue-500" onClick={() => scrollToTop()}>
                     &#8679;
                 </button>
             )}
