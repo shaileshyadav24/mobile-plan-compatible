@@ -34,6 +34,9 @@ You can directly run using `npm run start` command.
 
 Please use node version `v22` to avoid any failure in running app.
 
+## Tech stack
+
+React, Redux, TailwindCSS, MSW
 
 ## Approach
 
