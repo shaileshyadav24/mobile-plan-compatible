@@ -1,7 +1,6 @@
 const initialState = {
   seachType: '',
-  searchValue: '',
-  result: []
+  searchValue: ''
 };
 
 const reducer = (state = initialState, action) => {
@@ -15,11 +14,6 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 searchValue: action.searchValue
-            };
-        case 'SET_RESULT':
-            return {
-                ...state,
-                result: action.result
             };
         default:
             return state;

@@ -1,6 +1,7 @@
 import FormInput from "./common/FormInput"
 import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
+import {IMEISearchContent} from "../constant/IMEISearch";
 
 export default function IMEISearch({ isLoading, submitData }) {
     let dispatch = useDispatch();
@@ -18,7 +19,7 @@ export default function IMEISearch({ isLoading, submitData }) {
         const imeiRegex = /^[0-9]{15}$/;
         setError('');
         if (!imeiRegex.test(searchValue)) {
-            setError('Please enter a valid 15-digit IMEI number');
+            setError(IMEISearchContent.validationMessage);
         } else {
             submitData();
         }
@@ -27,10 +28,10 @@ export default function IMEISearch({ isLoading, submitData }) {
     return (
         <div className="w-full">
             <FormInput searchType="number" 
-                placeholder="Enter 15-digit IMEI"  
-                information="You can find your IMEI number by dialing *#06# on your phone's keypad or checking your device's settings." />
+                placeholder={IMEISearchContent.placeholder}  
+                information={IMEISearchContent.informationText} />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-            <button disabled={isLoading} className="w-full bg-blue-500 mt-2 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-400" onClick={searchPlanByIMEI}>{isLoading ? 'Checking...' : 'Search Compatability'}</button>
+            <button disabled={isLoading} className="w-full bg-blue-500 mt-2 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-400" onClick={searchPlanByIMEI}>{isLoading ? IMEISearchContent.checkingText : IMEISearchContent.buttonText}</button>
         </div>
     )
 
