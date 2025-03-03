@@ -1,7 +1,7 @@
-import FormInput from "./common/FormInput"
+import FormInput from "./ui/FormInput"
 import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { MobileSearchContent } from "../constant/MobileSearch";
+import { MobileSearchContent } from "../content/MobileSearch";
 
 export default function MobileSearch({ isLoading, submitData }) {
     let dispatch = useDispatch();
@@ -27,6 +27,7 @@ export default function MobileSearch({ isLoading, submitData }) {
     return (
         <div className="w-full">
             <FormInput searchType="text"
+                label={MobileSearchContent.label}
                 placeholder={MobileSearchContent.placeholder}
                 information={MobileSearchContent.informationText} />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}

@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { useQuery } from "react-query"
 import NoPlansFound from "./NoPlansFound";
-import { PhonePlansContent } from "../constant/PhonePlans";
+import { PhonePlansContent } from "../content/PhonePlans";
 
 export default function PhonePlans() {
 

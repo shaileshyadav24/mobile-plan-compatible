@@ -1,7 +1,7 @@
-import FormInput from "./common/FormInput"
+import FormInput from "./ui/FormInput"
 import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import {IMEISearchContent} from "../constant/IMEISearch";
+import {IMEISearchContent} from "../content/IMEISearch";
 
 export default function IMEISearch({ isLoading, submitData }) {
     let dispatch = useDispatch();
@@ -28,6 +28,7 @@ export default function IMEISearch({ isLoading, submitData }) {
     return (
         <div className="w-full">
             <FormInput searchType="number" 
+                label={IMEISearchContent.label}
                 placeholder={IMEISearchContent.placeholder}  
                 information={IMEISearchContent.informationText} />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}

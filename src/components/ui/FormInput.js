@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 import LabelWithInfomation from "./LabelWithInfomation";
 import { useDispatch } from "react-redux";
 
-export default function FormInput({ searchType, placeholder, information }) {
+export default function FormInput({ searchType, label, placeholder, information }) {
     let [searchInput, setSearchInput] = useState('');
     let dispatch = useDispatch();
 
@@ -17,7 +17,7 @@ export default function FormInput({ searchType, placeholder, information }) {
 
     return (
         <Fragment>
-            <LabelWithInfomation information={information} searchType={searchType}/>
+            <LabelWithInfomation information={information} label={label}/>
             <input className="search-input p-2 border rounded" type={searchType} placeholder={placeholder} value={searchInput} onChange={handleValueChange} />
         </Fragment>
     )

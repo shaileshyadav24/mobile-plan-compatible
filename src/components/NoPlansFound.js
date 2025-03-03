@@ -1,4 +1,4 @@
-import { NoPlansFoundContent } from '../constant/NoPlansFound';
+import { NoPlansFoundContent } from '../content/NoPlansFound';
 
 export default function NoPlansFound() {
     return (
