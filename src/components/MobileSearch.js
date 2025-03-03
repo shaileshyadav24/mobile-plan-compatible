@@ -1,7 +1,6 @@
 import FormInput from "./common/FormInput"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
 
 export default function MobileSearch({isLoading, submitData}) {
     let dispatch = useDispatch();

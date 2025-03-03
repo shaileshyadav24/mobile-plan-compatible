@@ -7,23 +7,40 @@ export const phonePlansByMobile = [
                 "id": "P1",
                 "planName": "Unlimited Basic",
                 "price": 70,
-                "features": {
-                    "data": "Unlimited 5G",
-                    "hotspot": "10GB high-speed",
-                    "streaming": "HD Quality",
-                    "international": "Mexico/Canada roaming included"
-                }
+                "description": "Basic unlimited plan with essential features.",
+                "features": [
+                    "Unlimited 5G data",
+                    "10GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Mexico/Canada roaming included"
+                ],
+                "mostPopular": false
             },
             {
                 "id": "P2",
                 "planName": "Unlimited Premium",
                 "price": 90,
-                "features": {
-                    "data": "Unlimited Ultra 5G",
-                    "hotspot": "50GB high-speed",
-                    "streaming": "4K UHD Quality",
-                    "international": "Global Pass included"
-                }
+                "description": "Premium plan with ultra 5G data and global pass.",
+                "features": [
+                    "Unlimited Ultra 5G data",
+                    "50GB high-speed hotspot",
+                    "4K UHD Quality streaming",
+                    "Global Pass included"
+                ],
+                "mostPopular": true
+            },
+            {
+                "id": "P3",
+                "planName": "Value Plan",
+                "price": 55,
+                "description": "Affordable plan with ample data and hotspot.",
+                "features": [
+                    "100GB 5G data",
+                    "5GB high-speed hotspot",
+                    "SD Quality streaming",
+                    "Pay-as-you-go roaming"
+                ],
+                "mostPopular": false
             }
         ]
     },
@@ -35,23 +52,40 @@ export const phonePlansByMobile = [
                 "id": "P3",
                 "planName": "Value Plan",
                 "price": 55,
-                "features": {
-                    "data": "100GB 5G",
-                    "hotspot": "5GB high-speed",
-                    "streaming": "SD Quality",
-                    "international": "Pay-as-you-go roaming"
-                }
+                "description": "Affordable plan with ample data and hotspot.",
+                "features": [
+                    "100GB 5G data",
+                    "5GB high-speed hotspot",
+                    "SD Quality streaming",
+                    "Pay-as-you-go roaming"
+                ],
+                "mostPopular": false
             },
             {
                 "id": "P4",
                 "planName": "Family Plan",
                 "price": 160,
-                "features": {
-                    "data": "Unlimited 5G for 4 lines",
-                    "hotspot": "30GB/line",
-                    "streaming": "HD Quality",
-                    "international": "Discounted global rates"
-                }
+                "description": "Family plan with unlimited data for 4 lines.",
+                "features": [
+                    "Unlimited 5G data for 4 lines",
+                    "30GB/line hotspot",
+                    "HD Quality streaming",
+                    "Discounted global rates"
+                ],
+                "mostPopular": true
+            },
+            {
+                "id": "P5",
+                "planName": "Student Plan",
+                "price": 45,
+                "description": "Student plan with sufficient data and hotspot.",
+                "features": [
+                    "50GB 5G data",
+                    "15GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Free Canada/Mexico data"
+                ],
+                "mostPopular": false
             }
         ]
     },
@@ -63,23 +97,40 @@ export const phonePlansByMobile = [
                 "id": "P5",
                 "planName": "5G Business Pro",
                 "price": 85,
-                "features": {
-                    "data": "Unlimited Priority 5G",
-                    "hotspot": "100GB high-speed",
-                    "streaming": "4K UHD",
-                    "international": "Global unlimited texting"
-                }
+                "description": "Business plan with priority 5G data and global texting.",
+                "features": [
+                    "Unlimited Priority 5G data",
+                    "100GB high-speed hotspot",
+                    "4K UHD streaming",
+                    "Global unlimited texting"
+                ],
+                "mostPopular": true
             },
             {
                 "id": "P6",
                 "planName": "Student Plan",
                 "price": 45,
-                "features": {
-                    "data": "50GB 5G",
-                    "hotspot": "15GB high-speed",
-                    "streaming": "HD Quality",
-                    "international": "Free Canada/Mexico data"
-                }
+                "description": "Student plan with sufficient data and hotspot.",
+                "features": [
+                    "50GB 5G data",
+                    "15GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Free Canada/Mexico data"
+                ],
+                "mostPopular": false
+            },
+            {
+                "id": "P7",
+                "planName": "Flex Plan",
+                "price": 65,
+                "description": "Flexible plan with unlimited calls to 30+ countries.",
+                "features": [
+                    "Unlimited 5G data",
+                    "20GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Unlimited calls to 30+ countries"
+                ],
+                "mostPopular": false
             }
         ]
     },
@@ -91,23 +142,40 @@ export const phonePlansByMobile = [
                 "id": "P7",
                 "planName": "Flex Plan",
                 "price": 65,
-                "features": {
-                    "data": "Unlimited 5G",
-                    "hotspot": "20GB high-speed",
-                    "streaming": "HD Quality",
-                    "international": "Unlimited calls to 30+ countries"
-                }
+                "description": "Flexible plan with unlimited calls to 30+ countries.",
+                "features": [
+                    "Unlimited 5G data",
+                    "20GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Unlimited calls to 30+ countries"
+                ],
+                "mostPopular": false
             },
             {
                 "id": "P8",
                 "planName": "Premium Plus",
                 "price": 110,
-                "features": {
-                    "data": "Unlimited Ultra 5G",
-                    "hotspot": "Unlimited high-speed",
-                    "streaming": "4K UHD",
-                    "international": "Global unlimited data"
-                }
+                "description": "Top-tier plan with unlimited ultra 5G data and hotspot.",
+                "features": [
+                    "Unlimited Ultra 5G data",
+                    "Unlimited high-speed hotspot",
+                    "4K UHD streaming",
+                    "Global unlimited data"
+                ],
+                "mostPopular": true
+            },
+            {
+                "id": "P9",
+                "planName": "Business Flex",
+                "price": 95,
+                "description": "Business plan with flexible data options.",
+                "features": [
+                    "Unlimited 5G data",
+                    "30GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Global texting included"
+                ],
+                "mostPopular": false
             }
         ]
     },
@@ -119,34 +187,40 @@ export const phonePlansByMobile = [
                 "id": "P1",
                 "planName": "Unlimited Basic",
                 "price": 70,
-                "features": {
-                    "data": "Unlimited 5G",
-                    "hotspot": "10GB high-speed",
-                    "streaming": "HD Quality",
-                    "international": "Mexico/Canada roaming included"
-                }
+                "description": "Basic unlimited plan with essential features.",
+                "features": [
+                    "Unlimited 5G data",
+                    "10GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Mexico/Canada roaming included"
+                ],
+                "mostPopular": false
             },
             {
                 "id": "P2",
                 "planName": "Unlimited Premium",
                 "price": 90,
-                "features": {
-                    "data": "Unlimited Ultra 5G",
-                    "hotspot": "50GB high-speed",
-                    "streaming": "4K UHD Quality",
-                    "international": "Global Pass included"
-                }
+                "description": "Premium plan with ultra 5G data and global pass.",
+                "features": [
+                    "Unlimited Ultra 5G data",
+                    "50GB high-speed hotspot",
+                    "4K UHD Quality streaming",
+                    "Global Pass included"
+                ],
+                "mostPopular": true
             },
             {
                 "id": "P3",
                 "planName": "Value Plan",
                 "price": 55,
-                "features": {
-                    "data": "100GB 5G",
-                    "hotspot": "5GB high-speed",
-                    "streaming": "SD Quality",
-                    "international": "Pay-as-you-go roaming"
-                }
+                "description": "Affordable plan with ample data and hotspot.",
+                "features": [
+                    "100GB 5G data",
+                    "5GB high-speed hotspot",
+                    "SD Quality streaming",
+                    "Pay-as-you-go roaming"
+                ],
+                "mostPopular": false
             }
         ]
     },
@@ -158,23 +232,40 @@ export const phonePlansByMobile = [
                 "id": "P3",
                 "planName": "Value Plan",
                 "price": 55,
-                "features": {
-                    "data": "100GB 5G",
-                    "hotspot": "5GB high-speed",
-                    "streaming": "SD Quality",
-                    "international": "Pay-as-you-go roaming"
-                }
+                "description": "Affordable plan with ample data and hotspot.",
+                "features": [
+                    "100GB 5G data",
+                    "5GB high-speed hotspot",
+                    "SD Quality streaming",
+                    "Pay-as-you-go roaming"
+                ],
+                "mostPopular": false
             },
             {
                 "id": "P4",
                 "planName": "Family Plan",
                 "price": 160,
-                "features": {
-                    "data": "Unlimited 5G for 4 lines",
-                    "hotspot": "30GB/line",
-                    "streaming": "HD Quality",
-                    "international": "Discounted global rates"
-                }
+                "description": "Family plan with unlimited data for 4 lines.",
+                "features": [
+                    "Unlimited 5G data for 4 lines",
+                    "30GB/line hotspot",
+                    "HD Quality streaming",
+                    "Discounted global rates"
+                ],
+                "mostPopular": true
+            },
+            {
+                "id": "P5",
+                "planName": "Student Plan",
+                "price": 45,
+                "description": "Student plan with sufficient data and hotspot.",
+                "features": [
+                    "50GB 5G data",
+                    "15GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Free Canada/Mexico data"
+                ],
+                "mostPopular": false
             }
         ]
     },
@@ -190,23 +281,40 @@ export const phonePlansByIMEI = [
                 "id": "P1",
                 "planName": "Unlimited Basic",
                 "price": 70,
-                "features": {
-                    "data": "Unlimited 5G",
-                    "hotspot": "10GB high-speed",
-                    "streaming": "HD Quality",
-                    "international": "Mexico/Canada roaming included"
-                }
+                "description": "Basic unlimited plan with essential features.",
+                "features": [
+                    "Unlimited 5G data",
+                    "10GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Mexico/Canada roaming included"
+                ],
+                "mostPopular": false
             },
             {
                 "id": "P2",
                 "planName": "Unlimited Premium",
                 "price": 90,
-                "features": {
-                    "data": "Unlimited Ultra 5G",
-                    "hotspot": "50GB high-speed",
-                    "streaming": "4K UHD Quality",
-                    "international": "Global Pass included"
-                }
+                "description": "Premium plan with ultra 5G data and global pass.",
+                "features": [
+                    "Unlimited Ultra 5G data",
+                    "50GB high-speed hotspot",
+                    "4K UHD Quality streaming",
+                    "Global Pass included"
+                ],
+                "mostPopular": true
+            },
+            {
+                "id": "P3",
+                "planName": "Value Plan",
+                "price": 55,
+                "description": "Affordable plan with ample data and hotspot.",
+                "features": [
+                    "100GB 5G data",
+                    "5GB high-speed hotspot",
+                    "SD Quality streaming",
+                    "Pay-as-you-go roaming"
+                ],
+                "mostPopular": false
             }
         ]
     },
@@ -218,23 +326,40 @@ export const phonePlansByIMEI = [
                 "id": "P3",
                 "planName": "Value Plan",
                 "price": 55,
-                "features": {
-                    "data": "100GB 5G",
-                    "hotspot": "5GB high-speed",
-                    "streaming": "SD Quality",
-                    "international": "Pay-as-you-go roaming"
-                }
+                "description": "Affordable plan with ample data and hotspot.",
+                "features": [
+                    "100GB 5G data",
+                    "5GB high-speed hotspot",
+                    "SD Quality streaming",
+                    "Pay-as-you-go roaming"
+                ],
+                "mostPopular": false
             },
             {
                 "id": "P4",
                 "planName": "Family Plan",
                 "price": 160,
-                "features": {
-                    "data": "Unlimited 5G for 4 lines",
-                    "hotspot": "30GB/line",
-                    "streaming": "HD Quality",
-                    "international": "Discounted global rates"
-                }
+                "description": "Family plan with unlimited data for 4 lines.",
+                "features": [
+                    "Unlimited 5G data for 4 lines",
+                    "30GB/line hotspot",
+                    "HD Quality streaming",
+                    "Discounted global rates"
+                ],
+                "mostPopular": true
+            },
+            {
+                "id": "P5",
+                "planName": "Student Plan",
+                "price": 45,
+                "description": "Student plan with sufficient data and hotspot.",
+                "features": [
+                    "50GB 5G data",
+                    "15GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Free Canada/Mexico data"
+                ],
+                "mostPopular": false
             }
         ]
     },
@@ -243,26 +368,43 @@ export const phonePlansByIMEI = [
         "imei": "356938035643811",
         "plans": [
             {
+                "id": "P3",
+                "planName": "Value Plan",
+                "price": 55,
+                "description": "Affordable plan with ample data and hotspot.",
+                "features": [
+                    "100GB 5G data",
+                    "5GB high-speed hotspot",
+                    "SD Quality streaming",
+                    "Pay-as-you-go roaming"
+                ],
+                "mostPopular": false
+            },
+            {
                 "id": "P5",
                 "planName": "5G Business Pro",
                 "price": 85,
-                "features": {
-                    "data": "Unlimited Priority 5G",
-                    "hotspot": "100GB high-speed",
-                    "streaming": "4K UHD",
-                    "international": "Global unlimited texting"
-                }
+                "description": "Business plan with priority 5G data and global texting.",
+                "features": [
+                    "Unlimited Priority 5G data",
+                    "100GB high-speed hotspot",
+                    "4K UHD streaming",
+                    "Global unlimited texting"
+                ],
+                "mostPopular": true
             },
             {
                 "id": "P6",
                 "planName": "Student Plan",
                 "price": 45,
-                "features": {
-                    "data": "50GB 5G",
-                    "hotspot": "15GB high-speed",
-                    "streaming": "HD Quality",
-                    "international": "Free Canada/Mexico data"
-                }
+                "description": "Student plan with sufficient data and hotspot.",
+                "features": [
+                    "50GB 5G data",
+                    "15GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Free Canada/Mexico data"
+                ],
+                "mostPopular": false
             }
         ]
     },
@@ -274,23 +416,40 @@ export const phonePlansByIMEI = [
                 "id": "P7",
                 "planName": "Flex Plan",
                 "price": 65,
-                "features": {
-                    "data": "Unlimited 5G",
-                    "hotspot": "20GB high-speed",
-                    "streaming": "HD Quality",
-                    "international": "Unlimited calls to 30+ countries"
-                }
+                "description": "Flexible plan with unlimited calls to 30+ countries.",
+                "features": [
+                    "Unlimited 5G data",
+                    "20GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Unlimited calls to 30+ countries"
+                ],
+                "mostPopular": false
             },
             {
                 "id": "P8",
                 "planName": "Premium Plus",
                 "price": 110,
-                "features": {
-                    "data": "Unlimited Ultra 5G",
-                    "hotspot": "Unlimited high-speed",
-                    "streaming": "4K UHD",
-                    "international": "Global unlimited data"
-                }
+                "description": "Top-tier plan with unlimited ultra 5G data and hotspot.",
+                "features": [
+                    "Unlimited Ultra 5G data",
+                    "Unlimited high-speed hotspot",
+                    "4K UHD streaming",
+                    "Global unlimited data"
+                ],
+                "mostPopular": true
+            },
+            {
+                "id": "P9",
+                "planName": "Business Flex",
+                "price": 95,
+                "description": "Business plan with flexible data options.",
+                "features": [
+                    "Unlimited 5G data",
+                    "30GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Global texting included"
+                ],
+                "mostPopular": false
             }
         ]
     },
@@ -302,34 +461,40 @@ export const phonePlansByIMEI = [
                 "id": "P1",
                 "planName": "Unlimited Basic",
                 "price": 70,
-                "features": {
-                    "data": "Unlimited 5G",
-                    "hotspot": "10GB high-speed",
-                    "streaming": "HD Quality",
-                    "international": "Mexico/Canada roaming included"
-                }
+                "description": "Basic unlimited plan with essential features.",
+                "features": [
+                    "Unlimited 5G data",
+                    "10GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Mexico/Canada roaming included"
+                ],
+                "mostPopular": false
             },
             {
                 "id": "P2",
                 "planName": "Unlimited Premium",
                 "price": 90,
-                "features": {
-                    "data": "Unlimited Ultra 5G",
-                    "hotspot": "50GB high-speed",
-                    "streaming": "4K UHD Quality",
-                    "international": "Global Pass included"
-                }
+                "description": "Premium plan with ultra 5G data and global pass.",
+                "features": [
+                    "Unlimited Ultra 5G data",
+                    "50GB high-speed hotspot",
+                    "4K UHD Quality streaming",
+                    "Global Pass included"
+                ],
+                "mostPopular": true
             },
             {
                 "id": "P3",
                 "planName": "Value Plan",
                 "price": 55,
-                "features": {
-                    "data": "100GB 5G",
-                    "hotspot": "5GB high-speed",
-                    "streaming": "SD Quality",
-                    "international": "Pay-as-you-go roaming"
-                }
+                "description": "Affordable plan with ample data and hotspot.",
+                "features": [
+                    "100GB 5G data",
+                    "5GB high-speed hotspot",
+                    "SD Quality streaming",
+                    "Pay-as-you-go roaming"
+                ],
+                "mostPopular": false
             }
         ]
     },
@@ -341,23 +506,40 @@ export const phonePlansByIMEI = [
                 "id": "P3",
                 "planName": "Value Plan",
                 "price": 55,
-                "features": {
-                    "data": "100GB 5G",
-                    "hotspot": "5GB high-speed",
-                    "streaming": "SD Quality",
-                    "international": "Pay-as-you-go roaming"
-                }
+                "description": "Affordable plan with ample data and hotspot.",
+                "features": [
+                    "100GB 5G data",
+                    "5GB high-speed hotspot",
+                    "SD Quality streaming",
+                    "Pay-as-you-go roaming"
+                ],
+                "mostPopular": false
             },
             {
                 "id": "P4",
                 "planName": "Family Plan",
                 "price": 160,
-                "features": {
-                    "data": "Unlimited 5G for 4 lines",
-                    "hotspot": "30GB/line",
-                    "streaming": "HD Quality",
-                    "international": "Discounted global rates"
-                }
+                "description": "Family plan with unlimited data for 4 lines.",
+                "features": [
+                    "Unlimited 5G data for 4 lines",
+                    "30GB/line hotspot",
+                    "HD Quality streaming",
+                    "Discounted global rates"
+                ],
+                "mostPopular": true
+            },
+            {
+                "id": "P5",
+                "planName": "Student Plan",
+                "price": 45,
+                "description": "Student plan with sufficient data and hotspot.",
+                "features": [
+                    "50GB 5G data",
+                    "15GB high-speed hotspot",
+                    "HD Quality streaming",
+                    "Free Canada/Mexico data"
+                ],
+                "mostPopular": false
             }
         ]
     },

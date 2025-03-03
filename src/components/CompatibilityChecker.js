@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import IMEISearch from "./IMEISearch";
 import MobileSearch from "./MobileSearch";
 import Tab from "./common/Tab";
@@ -14,7 +14,7 @@ export default function CompatibilityChecker() {
 
     let queryClient = useQueryClient();
     let mutation = useMutation(fetchCompatiblePlans)
-    
+
     let searchType = useSelector(state => state.searchType);
     let searchValue = useSelector(state => state.searchValue);
 
@@ -42,19 +42,19 @@ export default function CompatibilityChecker() {
     };
 
     return (
-        <div className="flex flex-col items-center mt-6">
-            <h3 className="mb-10">You can enter your phone model or IMEI number to check if it’s compatible with US Mobile.</h3>
-            <div className="flex gap-2 mb-4">
-                <Tab tabsName={tabsName} tab={tab} setTabType={setTabType} />
-            </div>
-            <div className="space-y-4 mt-4">
-                {tab === 'MOBILE' ? <MobileSearch isLoading={mutation.isLoading} submitData={submitData} /> : <IMEISearch isLoading={mutation.isLoading} submitData={submitData} />}
-            </div>
+        <Fragment>
+            <div className="flex flex-col items-center mt-6 mb-10">
+                <h3 className="mb-10">You can enter your phone model or IMEI number to check if it’s compatible with US Mobile.</h3>
+                <div className="flex gap-2 mb-4">
+                    <Tab tabsName={tabsName} tab={tab} setTabType={setTabType} />
+                </div>
+                <div className="space-y-4 mt-4">
+                    {tab === 'MOBILE' ? <MobileSearch isLoading={mutation.isLoading} submitData={submitData} /> : <IMEISearch isLoading={mutation.isLoading} submitData={submitData} />}
+                </div>
 
-            {mutation.isLoading && <p className="mt-4">Loading...</p>}
-            {isError && <p className="mt-4">Something went wrong...Please try again.</p>}
-            {mutation.isSuccess && <PhonePlans />}
-
-        </div>
+                {isError && <h2 className="mt-4">Something went wrong...Please try again.</h2>}
+            </div>
+            {mutation.isSuccess && <PhonePlans/>}
+        </Fragment>
     )
 }

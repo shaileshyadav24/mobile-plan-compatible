@@ -1,4 +1,4 @@
-import { http, HttpResponse } from 'msw'
+import { delay, http, HttpResponse } from 'msw'
 import { phonePlansByMobile, phonePlansByIMEI } from './phonePlans';
 
 export const handlers = [
@@ -6,6 +6,8 @@ export const handlers = [
   http.post("/getCompatiblePlans", async ({ request }) => {
 
     const payload = await request.json();
+
+    await delay(5000);
 
     if (payload.searchType === 'IMEI') {
       let phonePlans = phonePlansByIMEI.find(plan => plan.imei === payload.searchValue);
