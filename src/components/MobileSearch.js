@@ -25,14 +25,14 @@ export default function MobileSearch({ isLoading, submitData }) {
     }
 
     return (
-        <div className="w-full">
+        <form action={searchPlanByMobile} className="w-full">
             <FormInput searchType="text"
                 label={MobileSearchContent.label}
                 placeholder={MobileSearchContent.placeholder}
                 information={MobileSearchContent.informationText} />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-            <button disabled={isLoading} className="w-full bg-blue-500 mt-2 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-400" onClick={searchPlanByMobile}>{isLoading ? MobileSearchContent.checkingText : MobileSearchContent.buttonText}</button>
-        </div>
+            <button type="submit" disabled={isLoading} className="w-full bg-blue-500 mt-2 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-400">{isLoading ? MobileSearchContent.checkingText : MobileSearchContent.buttonText}</button>
+        </form>
     )
 
 }

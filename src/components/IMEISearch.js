@@ -26,14 +26,14 @@ export default function IMEISearch({ isLoading, submitData }) {
     }
 
     return (
-        <div className="w-full">
+        <form action={searchPlanByIMEI} className="w-full">
             <FormInput searchType="number" 
                 label={IMEISearchContent.label}
                 placeholder={IMEISearchContent.placeholder}  
                 information={IMEISearchContent.informationText} />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-            <button disabled={isLoading} className="w-full bg-blue-500 mt-2 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-400" onClick={searchPlanByIMEI}>{isLoading ? IMEISearchContent.checkingText : IMEISearchContent.buttonText}</button>
-        </div>
+            <button type="submit" disabled={isLoading} className="w-full bg-blue-500 mt-2 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-400">{isLoading ? IMEISearchContent.checkingText : IMEISearchContent.buttonText}</button>
+        </form>
     )
 
 }
