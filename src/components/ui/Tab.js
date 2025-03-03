@@ -1,5 +1,9 @@
 import { Fragment } from "react";
 
+// Component to display tabs passed as props in tabsName array
+// tabsName - Array of tabs to display
+// tab - Current tab selected
+// setTabType - Function to set tab type
 export default function Tab({tabsName, tab, setTabType}) {
 
     return (

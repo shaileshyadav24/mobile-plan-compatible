@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import store from './store/store'
 import { QueryClient, QueryClientProvider } from 'react-query';
 
+// Enable mocking for API requests
 async function enableMocking() {
   const { worker } = await import('./mocks/browser')
   return worker.start()

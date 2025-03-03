@@ -1,3 +1,4 @@
+// Component to display loading transition when API call is made
 export default function LoadingPlans() {
 
     let loadingItems = [

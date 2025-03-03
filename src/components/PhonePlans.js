@@ -3,8 +3,11 @@ import { useQuery } from "react-query"
 import NoPlansFound from "./NoPlansFound";
 import { PhonePlansContent } from "../content/PhonePlans";
 
+// Component to display list of all phone plans available
 export default function PhonePlans() {
 
+    // Once API request is complete, 
+    // phonePlans will have the data with the help of useQuery hook
     const { data: phonePlans } = useQuery({
         queryKey: ['phonePlans'],
         queryFn: () => { return phonePlans; }

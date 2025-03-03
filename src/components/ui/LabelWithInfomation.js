@@ -1,5 +1,8 @@
 import { Fragment, useState } from 'react';
 
+// Component to display label with information popup
+// information - Information to display in popup
+// label - Label to display
 export default function LabelWithInfomation({ information, label }) {
     let [showPopup, setShowPopup] = useState(false);
 

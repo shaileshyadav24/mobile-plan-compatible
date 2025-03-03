@@ -1,6 +1,7 @@
 import './App.css';
 import ScrollToTop from './components/ui/ScrollToTop';
 import CompatibilityChecker from './components/CompatibilityChecker';
+
 function App() {
   return (
     <div className="App">

@@ -10,6 +10,7 @@ import fetchCompatiblePlans from "../services/api";
 import LoadingPlans from "./ui/LoadingPlans";
 import { CompatibilityCheckerContent } from "../content/CompatibilityChecker";
 
+// Component to check compatibility of phone with plans
 export default function CompatibilityChecker() {
     let [tab, setTab] = useState('MOBILE');
     let [isError, setIsError] = useState('');
@@ -17,14 +18,20 @@ export default function CompatibilityChecker() {
     let queryClient = useQueryClient();
     let mutation = useMutation(fetchCompatiblePlans)
 
+    // Get search type and search value from redux store
     let searchType = useSelector(state => state.searchType);
     let searchValue = useSelector(state => state.searchValue);
 
+    // Function to set tab type 
+    // When user click on tab, set tab type and reset search value
+    // tabType - Tab type to set, e.g., MOBILE or IMEI
     function setTabType(tabType) {
         setTab(tabType);
         dispatch({ type: 'SET_SEARCH_VALUE', searchValue: '' });
     }
 
+    // Function to submit data
+    // Call API to get phone plans based on search type and search value
     async function submitData() {
         let body = JSON.stringify({
             searchType,
@@ -32,11 +39,15 @@ export default function CompatibilityChecker() {
         });
         setIsError(false);
         try {
+            // Call API to get phone plans based on search type and search value
             let response = await mutation.mutateAsync(body);
+            
             await queryClient.invalidateQueries('phonePlans');
             if (response.plans.length > 0) {
+                // Update phonePlans in queryClient
                 await queryClient.setQueryData('phonePlans', response.plans);
             } else {
+                // If no plans found, set phonePlans to empty array
                 await queryClient.setQueryData('phonePlans', []);
             }
         } catch (error) {

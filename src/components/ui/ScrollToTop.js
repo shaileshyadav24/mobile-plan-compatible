@@ -1,8 +1,11 @@
 import { Fragment, useEffect, useState } from "react";
 
+// Component to scroll to top of the page when user scoll down
 export default function ScrollToTop() {
     let [isVisible, setIsVisible] = useState(false);
 
+    // Add event listener on scroll when component is mounted
+    // Remove event listener scroll when component is unmounted
     useEffect(() => {
         window.addEventListener('scroll', showScrollToTopButton);
         return () => {
@@ -10,6 +13,7 @@ export default function ScrollToTop() {
         }
     }, []);
 
+    // Function to show scroll to top button when user scroll down
     function showScrollToTopButton() {
         if (window.scrollY > 50) {
             setIsVisible(true);
@@ -18,6 +22,7 @@ export default function ScrollToTop() {
         }
     }
 
+    // Function to scroll to top of the page
     function scrollToTop() {
         window.scrollTo({
             top: 0,

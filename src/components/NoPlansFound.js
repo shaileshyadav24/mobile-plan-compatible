@@ -1,5 +1,6 @@
 import { NoPlansFoundContent } from '../content/NoPlansFound';
 
+// Component to display when no plans are found
 export default function NoPlansFound() {
     return (
         <div class="w-full flex items-center flex-wrap justify-center gap-10 mt-20">
@@ -22,7 +23,6 @@ export default function NoPlansFound() {
                     <circle cx="50.4633" cy="23.5641" r="1.02564" fill="#3c82f6" />
                 </svg>
                 <h2 class="text-center text-black text-base leading-relaxed pb-1">{NoPlansFoundContent.title}</h2>
-
             </div>
         </div>
     )
