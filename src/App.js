@@ -1,7 +1,11 @@
 import './App.css';
+import ScrollToTop from './components/common/ScrollToTop';
 import CompatibilityChecker from './components/CompatibilityChecker';
 
 function App() {
+
+
+
   return (
     <div className="App">
       <div className="min-h-screen bg-gray-100 p-4">
@@ -9,6 +13,7 @@ function App() {
           US Mobile Compatibility Checker
         </h1>
         <CompatibilityChecker />
+        <ScrollToTop />
       </div>
     </div>
   );
