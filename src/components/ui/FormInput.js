@@ -18,7 +18,7 @@ export default function FormInput({ searchType, label, placeholder, information 
     return (
         <Fragment>
             <LabelWithInfomation information={information} label={label}/>
-            <input className="search-input p-2 border rounded" type={searchType} placeholder={placeholder} value={searchInput} onChange={handleValueChange} />
+            <input className="search-input p-2 border rounded" type={searchType} placeholder={placeholder} aria-label={placeholder} value={searchInput} onChange={handleValueChange} />
         </Fragment>
     )
 }

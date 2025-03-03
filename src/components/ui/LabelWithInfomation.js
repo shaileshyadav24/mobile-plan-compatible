@@ -5,9 +5,9 @@ export default function LabelWithInfomation({ information, label }) {
 
     return (
         <Fragment>
-            <label className="block mb-2 text-base font-medium">
+            <label className="block mb-2 text-base font-medium" aria-label={label} >
                 {label}
-                <a className="ml-2 text-gray-500 cursor-pointer inline-block align-sub" onClick={() => setShowPopup(true)}>
+                <a className="ml-2 text-gray-500 cursor-pointer inline-block align-sub" aria-label="Show information"  onClick={() => setShowPopup(true)}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M18 10c0 4.418-3.582 8-8 8s-8-3.582-8-8 3.582-8 8-8 8 3.582 8 8zm-8-3a1 1 0 100 2 1 1 0 000-2zm1 4a1 1 0 00-2 0v3a1 1 0 002 0v-3z" clipRule="evenodd" />
                     </svg>
@@ -20,7 +20,7 @@ export default function LabelWithInfomation({ information, label }) {
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-10.707a1 1 0 00-1.414-1.414L10 8.586 7.707 6.293a1 1 0 00-1.414 1.414L8.586 10l-2.293 2.293a1 1 0 001.414 1.414L10 11.414l2.293 2.293a1 1 0 001.414-1.414L11.414 10l2.293-2.293z" clipRule="evenodd" />
                         </svg>
                     </a>
-                    <p className="text-sm w-11/12">{information}</p>
+                    <p aria-label={information} className="text-sm w-11/12">{information}</p>
                 </div>
             )}
         </Fragment>

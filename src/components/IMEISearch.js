@@ -32,7 +32,7 @@ export default function IMEISearch({ isLoading, submitData }) {
                 placeholder={IMEISearchContent.placeholder}  
                 information={IMEISearchContent.informationText} />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-            <button type="submit" disabled={isLoading} className="w-full bg-blue-500 mt-2 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-400">{isLoading ? IMEISearchContent.checkingText : IMEISearchContent.buttonText}</button>
+            <button type="submit" aria-label={IMEISearchContent.buttonText} disabled={isLoading} className="w-full bg-blue-500 mt-2 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-400">{isLoading ? IMEISearchContent.checkingText : IMEISearchContent.buttonText}</button>
         </form>
     )
 

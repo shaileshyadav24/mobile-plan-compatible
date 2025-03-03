@@ -50,7 +50,7 @@ export default function CompatibilityChecker() {
                 {CompatibilityCheckerContent.title}
             </h1>
             <div className="flex flex-col items-center mt-6 mb-10">
-                <h3 className="mb-10">{CompatibilityCheckerContent.description}</h3>
+                <h3 aria-label={CompatibilityChecker.description} className="mb-10">{CompatibilityCheckerContent.description}</h3>
                 <div className="flex gap-2 mb-4">
                     <Tab tabsName={tabsName} tab={tab} setTabType={setTabType} />
                 </div>

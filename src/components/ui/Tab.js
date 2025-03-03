@@ -8,6 +8,7 @@ export default function Tab({tabsName, tab, setTabType}) {
                 tabsName.map((data, index) => (
                     <button
                         key={index}
+                        aria-label={data.label}
                         type="button"
                         className={`flex-4 p-2 pr-4 rounded ${tab === data.value ? 'bg-blue-500 text-white' : 'bg-gray-200'
                             }`}

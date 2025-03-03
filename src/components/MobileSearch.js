@@ -31,7 +31,7 @@ export default function MobileSearch({ isLoading, submitData }) {
                 placeholder={MobileSearchContent.placeholder}
                 information={MobileSearchContent.informationText} />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-            <button type="submit" disabled={isLoading} className="w-full bg-blue-500 mt-2 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-400">{isLoading ? MobileSearchContent.checkingText : MobileSearchContent.buttonText}</button>
+            <button type="submit" aria-label={MobileSearchContent.buttonText} disabled={isLoading} className="w-full bg-blue-500 mt-2 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-400">{isLoading ? MobileSearchContent.checkingText : MobileSearchContent.buttonText}</button>
         </form>
     )
 
