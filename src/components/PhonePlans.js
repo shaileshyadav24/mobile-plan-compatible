@@ -22,7 +22,7 @@ export default function PhonePlans() {
                         {
                             phonePlans.map(plan => {
                                 return (
-                                    <div key={plan.id} className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow hover:drop-shadow-2xl">
+                                    <div key={plan.id} className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow hover:drop-shadow-2xl cursor-pointer">
                                         <h3 className="mb-4 text-2xl font-semibold">{plan.planName}</h3>
                                         {plan.mostPopular &&
                                             <div
